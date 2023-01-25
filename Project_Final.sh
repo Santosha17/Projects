@@ -55,5 +55,17 @@ echo "2 - Mau"
 echo "3 - Bom"
 echo "4 - Muito Bom"
 echo "5 - Excelente"
-read pergunta_g
-echo $((  ))
+read pergunta_h
+total=$(($pergunta_a + $pergunta_b + $pergunta_c + $pergunta_d +$pergunta_e + $pergunta_f + $pergunta_g + $pergunta_h))
+echo "$total"
+if [[ $total -lt 10 ]]; then
+     echo "M5"
+elif [[ $total -lt 18 ]]; then
+     echo "M4"
+elif [[ $total -lt 26  ]]; then
+     echo "M3"
+elif [[ $total -lt 35  ]]; then
+     echo "M2"
+else
+     echo "M1"
+fi
