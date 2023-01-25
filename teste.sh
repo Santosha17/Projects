@@ -1,2 +1,0 @@
-"Escreve Teste"~
-echo "teste"
