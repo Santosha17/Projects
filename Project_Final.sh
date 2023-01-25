@@ -56,7 +56,7 @@ echo "3 - Bom"
 echo "4 - Muito Bom"
 echo "5 - Excelente"
 read pergunta_h
-total=$(($pergunta_a + $pergunta_b + $pergunta_c + $pergunta_d +$pergunta_e + $pergunta_f + $pergunta_g + $pergunta_h))
+total=$(($pergunta_a + $pergunta_b + $pergunta_c + $pergunta_d +$pergunta_e + $pergunta_f + $pergunta_g + $pergunta_h +))
 echo "$total"
 if [[ $total -lt 10 ]]; then
      echo "M5"
