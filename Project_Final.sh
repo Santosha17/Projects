@@ -115,14 +115,14 @@ done
 echo ""
 total=$(( pergunta_a + pergunta_b + pergunta_c + pergunta_d + pergunta_e + pergunta_f + pergunta_g + pergunta_h + pergunta_i + pergunta_j ))
 echo "Total: $total"
-if [[ $total -lt 15 ]]; then
+if [[ $total -lt 15 ]]; then #Menos de 15 M5
      echo "Categoria: M5"
-elif [[ $total -lt 25 ]]; then
+elif [[ $total -lt 25 ]]; then #Menos de 25 M4
      echo "Categoria: M4"
-elif [[ $total -lt 35  ]]; then
+elif [[ $total -lt 35  ]]; then #Menos de 35 M3
      echo "Categoria: M3"
-elif [[ $total -lt 45  ]]; then
+elif [[ $total -lt 45  ]]; then #Menos de 45 M2
      echo "Categoria: M2"
 else
-     echo "Categoria: M1"
+     echo "Categoria: M1" #Entre 45 e 50 M1
 fi
