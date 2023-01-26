@@ -1,5 +1,11 @@
 #!/usr/bin/bash
 
+$maximum_limit=5
+$minimum_limit=0
+$maximum_total=50
+$num=5
+
+
 echo "A. Há quanto tempo jogas Padel?"
 echo "1 - Menos de 3 meses"
 echo "2 - 3 a 6 meses"
@@ -83,3 +89,12 @@ elif [[ $total -lt 50  ]]; then
 else
      echo "M1"
 fi
+
+if [ $num -gt $maximum_limit ]; then
+  echo "Error: Number is lower than the minimum limit."
+else 
+  echo "Error: Number is lower than the minimum limit."
+fi
+
+# echo "Error: Number is higher the maximum limit."
+echo "Error: Number is lower than the minimum limit."
