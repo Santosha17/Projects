@@ -19,16 +19,19 @@ echo "<--------------CPU Info--------------->"
 # Mostra informações do processador (CPU)
 cpu_model=$(grep "model name" /proc/cpuinfo | head -n 1 | awk -F ':' '{print $2}')
 cpu_cores=$(grep -c "processor" /proc/cpuinfo)
+#cpu_threads=$(lscpu | grep "Thread(s) per core" | awk '{print $2}')
 echo "Processador: $cpu_model"
 echo "Número de núcleos: $cpu_cores"
-echo "Número de threads: $cpu_threads"
+#echo "Número de threads: $cpu_threads"
 echo ""
 echo "<--------------Memory Info------------>"
 # Mostra informações da memória RAM
 mem_total=$(awk '/MemTotal/ {print $2}' /proc/meminfo)
 mem_free=$(awk '/MemFree/ {print $2}' /proc/meminfo)
+#mem_used=$(awk '/MemFree/ {print $2}' /proc/meminfo)
 echo "Memória total: $(($mem_total / 1024))MB"
 echo "Memória livre: $(($mem_free / 1024))MB"
+#echo "Mémoria usada: $(($mem_used / 1024))MB"
 echo ""
 echo "<--------------Disc Info-------------->"
 # Mostra informações do disco 

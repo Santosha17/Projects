@@ -3,24 +3,23 @@
 maximum_limit=5 #Limite máximo
 minimum_limit=1 #Limite mínimo
 
-IFS=';'
 filename=$1
 total=0
-while read -r pergunta resposta_1 resposta_2 resposta_3 resposta_4 resposta_5; do
-echo "$pergunta"
-echo "1 - $resposta_1"
-echo "2 - $resposta_2"
-echo "3 - $resposta_3"
-echo "4 - $resposta_4"
-echo "5 - $resposta_5"
-while [[ resposta -lt minimum_limit || resposta -gt maximum_limit ]]; do # Define o valor máximo e mínimo inserido#do
-  read -r -u -p "Insira um valor de 1 a 5: " resposta 
+IFS=$'\n'
+for pergunta in $(cat $filename); do
+     IFS=';' 
+     n=0
+     for col in $pergunta; do
+          if [[ $n -lt 1 ]]; then 
+               echo "$col"
+          else
+               echo "$n - $col"  
+          fi
+          n=$(( 1 + n ))
+     done
+     read input
+     total=$(( total + input ))
 done
-total=$(( resposta + total ))
-echo ""
-done < "$filename"
-
-
 
 echo "Total: $total"
 if [[ $total -lt 15 ]]; then # Menos de 15 M5
